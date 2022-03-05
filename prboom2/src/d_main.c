@@ -686,23 +686,23 @@ const demostate_t doom_demostates[][4] =
   },
 
   {
-    {D_SetPageName, NULL},
-    {D_SetPageName, NULL},
-    {D_SetPageName, NULL},
-    {D_SetPageName, NULL},
-  },
-
-  {
-    {G_DeferedPlayDemo, "demo2"},
-    {G_DeferedPlayDemo, "demo2"},
-    {G_DeferedPlayDemo, "demo2"},
-    {G_DeferedPlayDemo, "demo2"},
-  },
-
-  {
-    {D_SetPageName, "HELP2"},
-    {D_SetPageName, "HELP2"},
     {D_SetPageName, "CREDIT"},
+    {D_SetPageName, "CREDIT"},
+    {D_SetPageName, "CREDIT"},
+    {D_SetPageName, "CREDIT"},
+  },
+
+  {
+    {G_DeferedPlayDemo, "demo2"},
+    {G_DeferedPlayDemo, "demo2"},
+    {G_DeferedPlayDemo, "demo2"},
+    {G_DeferedPlayDemo, "demo2"},
+  },
+
+  {
+    {D_SetPageName, "HELP2"},
+    {D_SetPageName, "HELP2"},
+    {D_DrawTitle1,  "TITLEPIC"},
     {D_DrawTitle1,  "TITLEPIC"},
   },
 
