@@ -401,8 +401,7 @@ menu_t ReadDef1 =
   &MainDef,
   ReadMenu1,
   M_DrawReadThis1,
-  330,175,
-  //280,185,              // killough 2/21/98: fix help screens
+  280,185,
   0
 };
 
@@ -463,14 +462,22 @@ void M_DrawReadThis1(void)
   {
     V_DrawRawScreen("HELP2");
   }
-  else if (gamemode == shareware)
+  else if (gamemode == shareware || gamemode == registered) //(gamemode == shareware)
   {
     // e6y: wide-res
     V_FillBorder(-1, 0);
     V_DrawNamePatch(0, 0, 0, "HELP2", CR_DEFAULT, VPT_STRETCH);
   }
+  else if (gamemode == retail)
+  {
+    V_FillBorder(-1, 0);
+    V_DrawNamePatch(0, 0, 0, "HELP1", CR_DEFAULT, VPT_STRETCH);
+  }
   else
-    M_DrawCredits();
+  {
+    V_FillBorder(-1, 0);
+    V_DrawNamePatch(0, 0, 0, "HELP", CR_DEFAULT, VPT_STRETCH);
+  }
 }
 
 //
@@ -481,7 +488,8 @@ void M_DrawReadThis1(void)
 void M_DrawReadThis2(void)
 {
   inhelpscreens = true;
-  M_DrawCredits();
+  V_FillBorder(-1, 0);
+  V_DrawNamePatch(0, 0, 0, "HELP1", CR_DEFAULT, VPT_STRETCH);
 }
 
 /////////////////////////////
@@ -6209,7 +6217,6 @@ void M_Init(void)
 
       // killough 2/21/98: Fix registered Doom help screen
       // killough 10/98: moved to second screen, moved up to the top
-      ReadDef2.y = 15;
       // fallthrough
 
     case shareware:
@@ -6217,7 +6224,10 @@ void M_Init(void)
       EpiDef.numitems--;
       break;
     case retail:
-      // We are fine.
+      ReadDef1.routine = M_DrawReadThis1;
+      ReadDef1.x = 330;
+      ReadDef1.y = 175;
+      ReadMenu1[0].routine = M_FinishReadThis;
     default:
       break;
     }
