@@ -4664,7 +4664,7 @@ dboolean M_Responder (event_t* ev) {
     {
       M_StartControlPanel ();
 
-      currentMenu = &HelpDef;         // killough 10/98: new help screen
+      currentMenu = &ReadDef1;         // killough 10/98: new help screen
 
       itemOn = 0;
       S_StartSound(NULL,g_sfx_swtchn);
