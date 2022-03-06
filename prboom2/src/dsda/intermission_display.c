@@ -159,6 +159,6 @@ void dsda_DrawIntermissionDisplay(void) {
   dsda_UpdateIntermissionTime(split);
   dsda_UpdateIntermissionTotal(split);
 
-  HUlib_drawTextLine(&dsda_intermission_time.text, false);
-  HUlib_drawTextLine(&dsda_intermission_total.text, false);
+  //HUlib_drawTextLine(&dsda_intermission_time.text, false);
+  //HUlib_drawTextLine(&dsda_intermission_total.text, false);
 }
