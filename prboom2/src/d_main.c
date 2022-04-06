@@ -702,7 +702,7 @@ const demostate_t doom_demostates[][4] =
   {
     {D_SetPageName, "HELP2"},
     {D_SetPageName, "HELP2"},
-    {D_DrawTitle1,  "TITLEPIC"},
+    {D_DrawTitle2,  "TITLEPIC"},
     {D_DrawTitle1,  "TITLEPIC"},
   },
 
